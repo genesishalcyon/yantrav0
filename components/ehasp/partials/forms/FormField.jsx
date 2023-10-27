@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 // import DatePicker from "@/components/forms/DatePicker";
 // import DatePickerCustom from "@/components/forms/DatePickerCustom";
-import DatePickertw from "@/components/forms/DatePickertw";
+// import DatePickertw from "@/components/forms/DatePickertw";
 import Textarea from "@/components/forms/Textarea";
 import Input from "@/components/forms/Input";
 import Select from "@/components/forms/Select";
@@ -9,12 +9,18 @@ import ClearDiscountIcon from "@/components/svg/ClearDiscountIcon";
 import Visibility from "@/components/svg/Visibility";
 import VisibilityOff from "@/components/svg/VisibilityOff";
 import { useState } from "react";
-export default function FormField(props) {
-  const DatePicker = dynamic(() => import("@/components/forms/DatePicker"));
-  const DatePickerCustom = dynamic(() =>
-    import("@/components/forms/DatePickerCustom")
-  );
 
+const DatePicker = dynamic(() =>
+  import("@/components/forms/DatePicker").then((module) => module.default)
+);
+const DatePickerCustom = dynamic(() =>
+  import("@/components/forms/DatePickerCustom").then((module) => module.default)
+);
+const DatePickertw = dynamic(() =>
+  import("@/components/forms/DatePickertw").then((module) => module.default)
+);
+
+export default function FormField(props) {
   const [peek, setPeek] = useState(false);
   const errortype = props?.errortype || "";
   const errors = props?.errors || "";
