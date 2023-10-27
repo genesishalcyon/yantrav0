@@ -17,19 +17,27 @@ import { useRouter } from "next/router";
 // import CARTAPI from "@/lib/api/cart/request";
 // import notificationStore from "@/lib/store/notificationStore";
 // import NOTIFICATIONAPI from "@/lib/api/notification/request";
-import authStore from "@/lib/store/authStore";
+// import authStore from "@/lib/store/authStore";
 import AUTHAPI from "@/lib/api/auth/request";
 import { shallow } from "zustand/shallow";
 import SideBarButton from "@/components/ehasp/partials/SideBar/SideBarButton";
 // import MainLogo from "@/components/svg/MainLogo";
 import dynamic from "next/dynamic";
-import NotificationBadge from "./NotificationBadge";
+// import NotificationBadge from "./NotificationBadge";
 // import CartMenu from "./CartMenu";
 import Image from "next/image";
 const GUEST_FEATURE = process.env.NEXT_PUBLIC_GUEST_FEATURE;
 
+const NotificationBadge = dynamic(() =>
+  import("./NotificationBadge").then((module) => module.default)
+);
+
 const CartBadge = dynamic(() =>
   import("./CartBadge").then((module) => module.default)
+);
+
+const AccountNotVerified = dynamic(() =>
+  import("./AccountNotVerified").then((module) => module.default)
 );
 
 export default function Menu({ account }) {
@@ -44,10 +52,12 @@ export default function Menu({ account }) {
   const { tenantDetails, menus } = globalData;
   const nodes = menus?.parentNodes || [];
 
-  const [submissionLoading, onVerify] = authStore(
-    (state) => [state.submissionLoading, state.onVerify],
-    shallow
-  );
+  // const [submissionLoading, onVerify] = authStore(
+  //   (state) => [state.submissionLoading, state.onVerify],
+  //   shallow
+  // );
+
+  const [showLazy] = globalState((state) => [state.showLazy], shallow);
 
   // const { data: cartCount, mutate: reCount } = CARTAPI.countCartItemsSwr({
   //   render: profile || GUEST_FEATURE === "true",
@@ -357,31 +367,34 @@ export default function Menu({ account }) {
         </div>
       </nav>
       {account?.is_verified === false && (
-        <div className="py-2 w-full bg-[#D81B60] sticky top-[83px] md:top-[138px] xl:top-[140px] z-[899]">
-          <div className="flex flex-wrap items-center justify-center w-full h-full max-w-xl px-4 mx-auto sm:justify-between gap-x-2 gap-y-2 xl:px-0">
-            <p className="font-poppins text-[#FFFFFF] text-[16px] leading-[24px]">
-              Your account is not yet verified
-            </p>
-            <div className="flex items-center flex-nowrap">
-              <EmailIcon width={21} height={17} fill="#fff" />
-              <button
-                className="font-poppins text-[#FFFFFF] text-[14px] leading-[21px] font-[700] ml-2"
-                onClick={() => {
-                  onVerify()
-                    .then(() => {
-                      showAuthModal("verification-sent");
-                    })
-                    .catch(() => {});
-                }}
-                disabled={submissionLoading}
-              >
-                {submissionLoading
-                  ? "Sending..."
-                  : "Resend Verification Link Now"}
-              </button>
-            </div>
-          </div>
-        </div>
+        <>
+          {(showLazy || !isLoading) && <AccountNotVerified profile={profile} />}
+        </>
+        // <div className="py-2 w-full bg-[#D81B60] sticky top-[83px] md:top-[138px] xl:top-[140px] z-[899]">
+        //   <div className="flex flex-wrap items-center justify-center w-full h-full max-w-xl px-4 mx-auto sm:justify-between gap-x-2 gap-y-2 xl:px-0">
+        //     <p className="font-poppins text-[#FFFFFF] text-[16px] leading-[24px]">
+        //       Your account is not yet verified
+        //     </p>
+        //     <div className="flex items-center flex-nowrap">
+        //       <EmailIcon width={21} height={17} fill="#fff" />
+        //       <button
+        //         className="font-poppins text-[#FFFFFF] text-[14px] leading-[21px] font-[700] ml-2"
+        //         onClick={() => {
+        //           onVerify()
+        //             .then(() => {
+        //               showAuthModal("verification-sent");
+        //             })
+        //             .catch(() => {});
+        //         }}
+        //         disabled={submissionLoading}
+        //       >
+        //         {submissionLoading
+        //           ? "Sending..."
+        //           : "Resend Verification Link Now"}
+        //       </button>
+        //     </div>
+        //   </div>
+        // </div>
       )}
     </>
   );
