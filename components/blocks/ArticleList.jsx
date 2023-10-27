@@ -34,6 +34,7 @@ export default function Block({ block }) {
       description:
         "This is fill in text. It is here temporarily, and will be replaced with the proper text shortly. It is repeated many times so we will see what the website will look like with text.",
     },
+    // test
     {
       id: 4,
       image: "/images/a1.png",
