@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
-import { toast } from "react-toastify";
+const { toast } = await import("react-toastify");
 import Link from "next/link";
 import CARTAPI from "@/lib/api/cart/request";
 import LoadingButton from "@/components/ehasp/partials/LoadingButton";

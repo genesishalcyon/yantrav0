@@ -3,7 +3,7 @@ import AddressForm from "@/components/ehasp/partials/address/AddressForm";
 import LoadingButton from "@/components/ehasp/partials/LoadingButton";
 import addressStore from "@/lib/store/addressStore";
 import { useRef } from "react";
-import { toast } from "react-toastify";
+const { toast } = await import("react-toastify");
 import persistentStore from "@/lib/store/persistentStore";
 import checkoutStore from "@/lib/store/checkoutStore";
 export default function AddressModal({ id, refetch }) {

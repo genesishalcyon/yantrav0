@@ -7,7 +7,7 @@ import AddressModal from "@/components/ehasp/partials/address/AddressModal";
 import Table from "@/components/ehasp/partials/table/Table";
 import ConfirmButton from "@/components/ehasp/partials/confirm/ConfirmButton";
 import ADDRESSAPI from "@/lib/api/address/request";
-import { toast } from "react-toastify";
+const { toast } = await import("react-toastify");
 import ModalButton from "@/components/ehasp/partials/ModalButton";
 import { deserialize } from "@/lib/services/globalService";
 export default function CustomerAddress({}) {

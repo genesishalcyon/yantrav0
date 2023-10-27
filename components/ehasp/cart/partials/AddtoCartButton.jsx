@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { shallow } from "zustand/shallow";
 import { removeEmptyAttribute } from "@/lib/services/globalService";
-import { toast } from "react-toastify";
+const { toast } = await import("react-toastify");
 import LoadingButton from "@/components/ehasp/partials/LoadingButton";
 import cartStore from "@/lib/store/cartStore";
 import persistentStore from "@/lib/store/persistentStore";

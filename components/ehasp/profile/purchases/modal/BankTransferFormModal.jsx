@@ -1,6 +1,6 @@
 import { shallow } from "zustand/shallow";
 import { useRef, useState } from "react";
-import { toast } from "react-toastify";
+const { toast } = await import("react-toastify");
 import orderStore from "@/lib/store/orderStore";
 import BaseModal from "@/components/ehasp/partials/BaseModal";
 import MediaUploadCustom from "@/components/ehasp/partials/MediaUploadCustom";

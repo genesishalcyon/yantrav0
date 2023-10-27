@@ -7,7 +7,7 @@ import RemoveFavoritesIcon from "@/components/svg/RemoveFavoritesIcon";
 import EmptyFavoritesIcon from "@/components/svg/EmptyFavoritesIcon";
 import PageLoading from "@/components/page/PageLoading";
 import FAVORITEAPI from "@/lib/api/favorites/request";
-import { toast } from "react-toastify";
+const { toast } = await import("react-toastify");
 import { deserialize } from "@/lib/services/globalService";
 import { currency } from "@/lib/services/currencyService";
 import favoriteStore from "@/lib/store/favoriteStore";

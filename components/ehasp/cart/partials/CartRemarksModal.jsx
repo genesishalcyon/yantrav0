@@ -2,7 +2,7 @@ import cartStore from "@/lib/store/cartStore";
 import RemarksModal from "@/components/ehasp/partials/RemarksModal";
 import CARTAPI from "@/lib/api/cart/request";
 import { shallow } from "zustand/shallow";
-import { toast } from "react-toastify";
+const { toast } = await import("react-toastify");
 export default function CartRemarksModal() {
   const [remarksForm, activeItem, cartRefetch] = cartStore(
     (state) => [state.remarksForm, state.activeItem, state.cartRefetch],

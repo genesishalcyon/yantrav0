@@ -4,7 +4,7 @@ import FormField from "@/components/ehasp/partials/forms/FormField";
 import LoadingButton from "@/components/ehasp/partials/LoadingButton";
 import AuthLayout from "@/components/ehasp/auth/AuthLayout";
 import { useRouter } from "next/router";
-import { toast } from "react-toastify";
+const { toast } = await import("react-toastify");
 export default function TrackOrder() {
   const router = useRouter();
   const [

@@ -1,4 +1,4 @@
-import { toast } from "react-toastify";
+const { toast } = await import("react-toastify");
 import { Fragment } from "react";
 import { maxQuantity, formatProduct } from "@/lib/services/productService";
 import cartStore from "@/lib/store/cartStore";

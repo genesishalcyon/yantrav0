@@ -6,7 +6,7 @@ import addressStore from "@/lib/store/addressStore";
 import checkoutStore from "@/lib/store/checkoutStore";
 import { useRef } from "react";
 import { shallow } from "zustand/shallow";
-import { toast } from "react-toastify";
+const { toast } = await import("react-toastify");
 export default function AddressModalCheckout({
   id,
   reFetchAddress,

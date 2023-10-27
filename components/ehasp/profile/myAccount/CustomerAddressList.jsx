@@ -10,7 +10,7 @@ import ADDRESSAPI from "@/lib/api/address/request";
 import EditAddressIcon from "@/components/svg/EditAddressIcon";
 import DeleteAddressIcon from "@/components/svg/DeleteAddressIcon";
 import Radio from "@/components/svg/Radio";
-import { toast } from "react-toastify";
+const { toast } = await import("react-toastify");
 import { deserialize } from "@/lib/services/globalService";
 export default function CustomerAddressList({}) {
   const { data, mutate: refetch } = ADDRESSAPI.getAddressesSwr(

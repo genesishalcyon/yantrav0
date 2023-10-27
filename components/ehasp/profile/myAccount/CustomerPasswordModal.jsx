@@ -3,7 +3,7 @@ import FormField from "@/components/ehasp/partials/forms/FormField";
 import LoadingButton from "@/components/ehasp/partials/LoadingButton";
 import accountStore from "@/lib/store/accountStore";
 import { shallow } from "zustand/shallow";
-import { toast } from "react-toastify";
+const { toast } = await import("react-toastify");
 import { useRef } from "react";
 export default function CustomerInfoModal({ id }) {
   const ref = useRef();

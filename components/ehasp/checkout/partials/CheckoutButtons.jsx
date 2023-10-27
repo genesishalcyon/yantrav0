@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { shallow } from "zustand/shallow";
-import { toast } from "react-toastify";
+const { toast } = await import("react-toastify");
 import { removeEmptyAttribute } from "@/lib/services/globalService";
 import LoadingButton from "@/components/ehasp/partials/LoadingButton";
 import persistentStore from "@/lib/store/persistentStore";

@@ -2,7 +2,7 @@ import BaseModal from "@/components/ehasp/partials/BaseModal";
 import LoadingButton from "@/components/ehasp/partials/LoadingButton";
 import orderStore from "@/lib/store/orderStore";
 import { useRef } from "react";
-import { toast } from "react-toastify";
+const { toast } = await import("react-toastify");
 export default function OrderCancelModal({ id }) {
   const ref = useRef("");
   const [

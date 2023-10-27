@@ -4,7 +4,7 @@ import StarRating from "@/components/ehasp/partials/StarRating";
 import { shallow } from "zustand/shallow";
 import MediaUploadCustom from "@/components/ehasp/partials/MediaUploadCustom";
 import { useRef, useState } from "react";
-import { toast } from "react-toastify";
+const { toast } = await import("react-toastify");
 import LoadingButton from "@/components/ehasp/partials/LoadingButton";
 import REVIEWAPI from "@/lib/api/review/request";
 import formStore from "@/lib/store/formStore";

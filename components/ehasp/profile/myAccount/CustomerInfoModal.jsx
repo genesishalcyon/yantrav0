@@ -4,7 +4,7 @@ import LoadingButton from "@/components/ehasp/partials/LoadingButton";
 import accountStore from "@/lib/store/accountStore";
 import { shallow } from "zustand/shallow";
 import genders from "@/lib/constant/genders";
-import { toast } from "react-toastify";
+const { toast } = await import("react-toastify");
 import { Fragment, useRef } from "react";
 import persistentStore from "@/lib/store/persistentStore";
 import {
