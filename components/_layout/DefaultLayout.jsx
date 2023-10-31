@@ -53,13 +53,15 @@ export default function DefaultLayout(props) {
   );
 
   useEffect(() => {
-    const use = async () => {
-      const { Modal, Ripple, initTE } = await import("tw-elements");
-      initTE({ Modal, Ripple });
-      globalState.setState({ modalInit: Modal });
-    };
-    use();
-  }, []);
+    if (showLazy) {
+      const use = async () => {
+        const { Modal, Ripple, initTE } = await import("tw-elements");
+        initTE({ Modal, Ripple });
+        globalState.setState({ modalInit: Modal });
+      };
+      use();
+    }
+  }, [showLazy]);
 
   return (
     <div className="text-dim-black">
