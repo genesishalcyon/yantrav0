@@ -1,6 +1,3 @@
-// import ConfirmModal from "@/components/ehasp/partials/confirm/ConfirmModal";
-// import AuthModal from "@/components/ehasp/partials/AuthModal";
-// import { ToastContainer } from "react-toastify";
 import Menu from "@/layout/partials/Menu";
 import dynamic from "next/dynamic";
 import globalState from "@/lib/store/globalState";

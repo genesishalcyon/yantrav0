@@ -54,7 +54,7 @@ export default function Block({ block }) {
         </div>
 
         <div className="relative flex justify-end w-full  md:h-full md:absolute -z-50">
-          <picture className="w-full md:w-[50%] min-h-[345px] sm:min-h-[345px] md:h-full">
+          <picture className="w-full md:w-[50%] min-h-[260px] sm:min-h-[260px] md:h-full">
             <source media="(max-width:767px)" srcSet={mobile_image} />
             <source media="(min-width:768px)" srcSet={image} />
             <Image

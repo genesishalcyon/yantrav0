@@ -52,11 +52,6 @@ export default function Menu({ account }) {
   const { tenantDetails, menus } = globalData;
   const nodes = menus?.parentNodes || [];
 
-  // const [submissionLoading, onVerify] = authStore(
-  //   (state) => [state.submissionLoading, state.onVerify],
-  //   shallow
-  // );
-
   const [showLazy] = globalState((state) => [state.showLazy], shallow);
 
   // const { data: cartCount, mutate: reCount } = CARTAPI.countCartItemsSwr({

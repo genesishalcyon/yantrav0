@@ -71,7 +71,7 @@ export default function Block({ block }) {
                 >
                   <div className="w-[143px] h-[143px] 2sm:w-[193px] 2sm:h-[193px] sm:w-[233px] sm:h-[233px] lg:w-[263px] lg:h-[263px] xl:w-[363px] xl:h-[363px]">
                     <Image
-                      alt={`product-${item?.name}`}
+                      alt={`product-${item?.name}`} 
                       src={item?.media[0]?.original_url}
                       height={363}
                       width={363}
