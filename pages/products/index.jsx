@@ -103,7 +103,7 @@ const Products = dynamic(() =>
 const index = ({ brands = {}, categories = {} }) => {
   const { asPath } = useRouter();
   // return <Products brands={brands} categories={categories} />;
-  console.log(asPath.includes("/products"));
+  // console.log(asPath.includes("/products"));
   if (asPath.includes("/products")) {
     return <Products brands={brands} categories={categories} />;
   } else {
