@@ -100,7 +100,7 @@ const Products = dynamic(() =>
   import("./Products").then((module) => module.default)
 );
 
-const index = ({ brands = {}, categories = {} }) => {
+const ProductsPage = ({ brands = {}, categories = {} }) => {
   const { asPath } = useRouter();
   // return <Products brands={brands} categories={categories} />;
   // console.log(asPath.includes("/products"));
@@ -119,4 +119,4 @@ const index = ({ brands = {}, categories = {} }) => {
   // )}
 };
 
-export default index;
+export default ProductsPage;
