@@ -55,8 +55,13 @@ export default function Block({ block }) {
 
         <div className="relative flex justify-end w-full  md:h-full md:absolute -z-50">
           <picture className="w-full md:w-[50%] min-h-[260px] sm:min-h-[260px] md:h-full">
+            {/* <source media="(max-width:767px)" srcSet={mobile_image} /> */}
+            <source media="(min-width:1350px)" srcSet={image} />
+            <source
+              media="(min-width:768px)"
+              srcSet="/images/TyBviBlMbKbmekTGwuRdZkuWCY4sZy-metaMm9JNGh0RDNLZUcwMEQ3Z2dONm1pR2JRdDM3eUprLW1ldGFkR1Z6ZEM1M1pXSnctICgyKS53ZWJw.webp"
+            />
             <source media="(max-width:767px)" srcSet={mobile_image} />
-            <source media="(min-width:768px)" srcSet={image} />
             <Image
               src={mobile_image}
               alt="Flowers"
