@@ -2,8 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 export default function Block({ block }) {
-  const { title, description, button_label, button_link, image, mobile_image } =
-    block?.main;
+  const {
+    title,
+    description,
+    button_label,
+    button_link,
+    image,
+    mobile_image1,
+    mobile_image2,
+  } = block?.main;
 
   const [isLoading, setLoading] = useState(true);
 
@@ -54,30 +61,20 @@ export default function Block({ block }) {
         </div>
 
         <div className="relative flex justify-end w-full  md:h-full md:absolute -z-50">
-          <picture className="w-full md:w-[50%] min-h-[225px] md:h-full">
-            {/* <source media="(max-width:767px)" srcSet={mobile_image} /> */}
-            <source media="(min-width:1351px)" srcSet={image} />
-            <source
-              media="(min-width:768px)"
-              srcSet="/images/TyBviBlMbKbmekTGwuRdZkuWCY4sZy-metaMm9JNGh0RDNLZUcwMEQ3Z2dONm1pR2JRdDM3eUprLW1ldGFkR1Z6ZEM1M1pXSnctICgyKS53ZWJw.webp"
-            />
-            <source
-              media="(min-width:413px)"
-              srcSet="/images/announcement1.webp"
-            />
-            <source
-              media="(max-width:412px)"
-              srcSet="/images/announcement2.webp"
-            />
+          <picture className="w-full md:w-[50%] min-h-[260px] sm:min-h-[260px] md:h-full">
+            <source media="(min-width:1351px)" srcSet={desktop_image1} />
+            <source media="(min-width:768px)" srcSet={desktop_image2} />
+            <source media="(min-width:431px)" srcSet={mobile_image1} />
+            <source media="(max-width:430px)" srcSet={mobile_image2} />
             <Image
-              src={mobile_image}
-              alt="Flowers"
+              src={mobile_image2}
+              alt={title}
               width={500}
-              height={260}
+              height={418}
               loading="eager"
               placeholder="blur"
               priority
-              className="object-cover w-full h-full"
+              className="object-cover w-full h-[100%]"
               blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAIAAAACUFjqAAABhWlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AcxV9bS4u0ONhBxCFDdbIgKiJOWoUiVAi1QqsOJpd+QZOGJMXFUXAtOPixWHVwcdbVwVUQBD9AXF2cFF2kxP8lhRYxHhz34929x907wN+sMtXsGQNUzTIyqaSQy68KoVeEMYAgopiRmKnPiWIanuPrHj6+3iV4lve5P0dUKZgM8AnEs0w3LOIN4qlNS+e8TxxjZUkhPiceNeiCxI9cl11+41xy2M8zY0Y2M08cIxZKXSx3MSsbKvEkcVxRNcr351xWOG9xVqt11r4nf2GkoK0sc53mEFJYxBJECJBRRwVVWEjQqpFiIkP7SQ//oOMXySWTqwJGjgXUoEJy/OB/8Ltbszgx7iZFkkDwxbY/hoHQLtBq2Pb3sW23ToDAM3Cldfy1JjD9SXqjo8WPgL5t4OK6o8l7wOUOMPCkS4bkSAGa/mIReD+jb8oD/bdA75rbW3sfpw9AlrpK3wAHh8BIibLXPd4d7u7t3zPt/n4Af25yrLJ4XoEAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAAHdElNRQfnCBgFETuGUb30AAAAFUlEQVQY02P8//8/A27AxIAXjFRpAKXjAxH/0Dm5AAAAAElFTkSuQmCC"
             />
           </picture>

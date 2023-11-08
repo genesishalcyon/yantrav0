@@ -54,9 +54,9 @@ export default function Block({ block }) {
                   className="flex flex-col items-center w-full gap-y-3 rounded-[10px] bg-[#f8f8f8]"
                 >
                   <div className="w-[143px] h-[143px] 2sm:w-[193px] 2sm:h-[193px] sm:w-[233px] sm:h-[233px] lg:w-[263px] lg:h-[263px] xl:w-[363px] xl:h-[363px] lazy"></div>
-                  <p className="mt-4 text-[#f8f8f8] gap-x-10 w-full text-center text-[14px] leading-[21px] md:text-[16px] md:leading-[24px] font-[400] tracking-[0.8px]">
+                  {/* <p className="mt-4 text-[#f8f8f8] gap-x-10 w-full text-center text-[14px] leading-[21px] md:text-[16px] md:leading-[24px] font-[400] tracking-[0.8px]">
                     prodoct name
-                  </p>
+                  </p> */}
                 </div>
               ))}
             </div>
@@ -71,7 +71,7 @@ export default function Block({ block }) {
                 >
                   <div className="w-[143px] h-[143px] 2sm:w-[193px] 2sm:h-[193px] sm:w-[233px] sm:h-[233px] lg:w-[263px] lg:h-[263px] xl:w-[363px] xl:h-[363px]">
                     <Image
-                      alt={`product-${item?.name}`} 
+                      alt={`product-${item?.name}`}
                       src={item?.media[0]?.original_url}
                       height={363}
                       width={363}
